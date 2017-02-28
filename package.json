@@ -1,0 +1,13 @@
+{
+  "name": "dart-loader",
+  "version": "0.0.1",
+  "author": "Matt Dziuban",
+  "description": "Dart loader module for webpack",
+  "dependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mrdziuban/dart-loader"
+  },
+  "license": "UNLICENSED"
+}
