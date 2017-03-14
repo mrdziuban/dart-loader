@@ -35,4 +35,5 @@ node_modules
 
 *.tgz
 
-example/bundle.js
+example
+.npmignore

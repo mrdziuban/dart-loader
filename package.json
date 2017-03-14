@@ -9,5 +9,6 @@
     "type": "git",
     "url": "git@github.com:mrdziuban/dart-loader"
   },
-  "license": "UNLICENSED"
+  "main": "index.js",
+  "license": "MIT"
 }
