@@ -16,7 +16,7 @@ module.exports = function(source) {
     if (error) {
       // Output it into the console
       const msg = stdout.red;
-      throw new Error(msg);
+      console.error(msg);
 
       // Return from the function and call the callback
       return callback(error, null);
