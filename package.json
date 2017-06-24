@@ -4,6 +4,8 @@
   "author": "Matt Dziuban",
   "description": "Dart loader module for webpack",
   "dependencies": {
+    "colors": "^1.1.2",
+    "loader-utils": "^1.1.0"
   },
   "repository": {
     "type": "git",
