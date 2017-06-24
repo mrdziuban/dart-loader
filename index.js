@@ -24,7 +24,7 @@ const optsMap = {
 const constructDart2JsOptions = (options) =>
   Object.keys(options).reduce((res, key) => {
     const mapping = optsMap[key];
-    return mapping ? `${res} ${mapping}` : res;
+    return (mapping === true) ? `${res} ${mapping}` : res;
   }, '');
 
 module.exports = function(source) {
