@@ -26,6 +26,22 @@ module.exports = {
 }
 ```
 
+```js
+// webpack-chain
+module.exports = {
+  chainWebpack: config => {
+    config.module.rule('dart')
+      .test(/\.dart$/)
+      .use('dart-loader')
+      .loader('dart-loader')
+      .options({
+        minimize: '-m'
+      })
+      .end()
+  }
+}
+```
+
 Make sure you have the `dart2js` binary somewhere in your `PATH`.
 
 ### Example
