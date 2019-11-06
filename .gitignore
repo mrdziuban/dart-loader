@@ -36,3 +36,8 @@ node_modules
 *.tgz
 
 example/bundle.js
+
+# idea
+.DS_Store
+node_modules
+.idea
