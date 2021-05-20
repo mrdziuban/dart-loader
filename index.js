@@ -23,7 +23,6 @@ module.exports = function(source) {
   
 
   child_process.exec(cmd, function(error, stdout, stderr) {
-    if (error) console.log('error:', error);
     if (stdout) console.log('stdout:', stdout);
     if (stderr) console.log('stderr:', stderr);
        
