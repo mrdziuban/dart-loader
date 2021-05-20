@@ -6,11 +6,26 @@ module.exports = function(source) {
   const callback = this.async();
   const tmp = path.join(__dirname, 'tmp');
   const fname = path.basename(this.resourcePath, '.dart');
-  const cmd = `dart2js -o '${path.join(tmp, `${fname}.js`)}' '${this.resourcePath}'`;
-  child_process.execSync(`rm -rf '${tmp}'`);
-  child_process.execSync(`mkdir -p '${tmp}'`);
+  const cmd = `dart2js -o "${path.join(tmp, `${fname}.js`)}" "${this.resourcePath}"`;
+
+  if (fs.existsSync(tmp)) {
+    fs.rmdir(tmp, { recursive: true }, (err) => {
+      if (err) throw err;
+      fs.mkdir(tmp, { recursive: true }, (err) => {
+        if (err) throw err;
+      });
+    });
+  } else {
+    fs.mkdir(tmp, { recursive: true }, (err) => {
+      if (err) throw err;
+    });  
+  }
+  
 
   child_process.exec(cmd, function(error, stdout, stderr) {
+    if (stdout) console.log('stdout:', stdout);
+    if (stderr) console.log('stderr:', stderr);
+       
     if (error) { return callback(error, null); }
     const out = fs.readFileSync(path.join(tmp, `${fname}.js`), 'utf8');
     callback(null, out);

@@ -6,6 +6,7 @@ This is a simple Hello World example of the [Dart Webpack loader](https://www.np
 
 ```bash
 $ npm install
+$ pub get
 ```
 
 ### Compile
