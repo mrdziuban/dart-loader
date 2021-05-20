@@ -11,7 +11,6 @@ module.exports = function(source) {
   if (fs.existsSync(tmp)) {
     fs.rmdir(tmp, { recursive: true }, (err) => {
       if (err) throw err;
-      console.log('rmdir:' + tmp)
       fs.mkdir(tmp, { recursive: true }, (err) => {
         if (err) throw err;
       });
